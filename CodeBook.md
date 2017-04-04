@@ -1,6 +1,6 @@
 # run_analysis.R script does the following:
 
-##1. Merges the following data sets to create one data set called CombinedData
+## 1. Merges the following data sets to create one data set called CombinedData
    * activity_labels.txt
    * features.txt
    * Y_test.txt
