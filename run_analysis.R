@@ -1,4 +1,3 @@
-setwd("F:/Coursera/Getting and Cleaning Data/Week4/Week 4 Assignment")
 library(dplyr)
 
 ## Download Zip File

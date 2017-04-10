@@ -1,27 +1,90 @@
-# run_analysis.R script does the following:
+# Identifiers
 
-## 1. Reads the following downloaded files and creates dataframes
-   * activity_labels.txt
-   * features.txt
-   * Y_test.txt
-   * Y_train.txt
-   * subject_test.txt
-   * subject_train.txt
-   * X_test.txt
-   * X_train.txt
+ Subject - identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
+ Activity - identifies the activity labels 
 
-## 2. Combines data
-   * Combines test and train data using rbind()
-   * Adds names to columns
-   * Updates Activity column with descriptions
+ Note: Activity labels are defined as follows:
+ 	WALKING: subject was walking during the test
+	WALKING_UPSTAIRS: subject was walking up a staircase during the test
+	WALKING_DOWNSTAIRS: subject was walking down a staircase during the test
+	SITTING: subject was sitting during the test
+	STANDING: subject was standing during the test
+	LAYING: subject was laying down during the test
 
-## 3. Extracts only the measurements on the mean and standard deviation for each measurement
-   * The SubsetFeatures vector is created with the measurement columns and then subset() creates a SubsetFeaturesData dataframe with the columns needed
-   * cbind() is then used to combine this data with the subjects and activities
 
-## 4. Appropriately labels the data set with descriptive variable names. 
-   * Characters are removed from column names using gsub
+# Variables
 
-## 5. From the data set in step 4, creates a second, independent tidy data set (CombinedTidy) with the average of each variable for each activity and each subject
-   * This is done using the dyplr commands group_by() and summarize_each()
-   * This dataset is written to a text file called tidydata.txt
+ tBodyAccMeanX
+ tBodyAccMeanY
+ tBodyAccMeanZ
+ tBodyAccStdX
+ tBodyAccStdY
+ tBodyAccStdZ
+ tGravityAccMeanX
+ tGravityAccMeanY
+ tGravityAccMeanZ
+ tGravityAccStdX
+ tGravityAccStdY
+ tGravityAccStdZ        
+ tBodyAccJerkMeanX
+ tBodyAccJerkMeanY
+ tBodyAccJerkMeanZ
+ tBodyAccJerkStdX
+ tBodyAccJerkStdY
+ tBodyAccJerkStdZ
+ tBodyGyroMeanX          
+ tBodyGyroMeanY          
+ tBodyGyroMeanZ
+ tBodyGyroStdX
+ tBodyGyroStdY
+ tBodyGyroStdZ
+ tBodyGyroJerkMeanX
+ tBodyGyroJerkMeanY
+ tBodyGyroJerkMeanZ
+ tBodyGyroJerkStdX
+ tBodyGyroJerkStdY        
+ tBodyGyroJerkStdZ
+ tBodyAccMagMean
+ tBodyAccMagStd
+ tGravityAccMagMean
+ tGravityAccMagStd
+ tBodyAccJerkMagMean
+ tBodyAccJerkMagStd
+ tBodyGyroMagMean
+ tBodyGyroMagStd
+ tBodyGyroJerkMagMean
+ tBodyGyroJerkMagStd
+ fBodyAccMeanX
+ fBodyAccMeanY
+ fBodyAccMeanZ
+ fBodyAccStdX
+ fBodyAccStdY
+ fBodyAccStdZ
+ fBodyAccJerkMeanX
+ fBodyAccJerkMeanY
+ fBodyAccJerkMeanZ
+ fBodyAccJerkStdX
+ fBodyAccJerkStdY
+ fBodyAccJerkStdZ
+ fBodyGyroMeanX
+ fBodyGyroMeanY
+ fBodyGyroMeanZ
+ fBodyGyroStdX
+ fBodyGyroStdY
+ fBodyGyroStdZ
+ fBodyAccMagMean
+ fBodyAccMagStd
+ fBodyBodyAccJerkMagMean
+ fBodyBodyAccJerkMagStd
+ fBodyBodyGyroMagMean
+ fBodyBodyGyroMagStd
+ fBodyBodyGyroJerkMagMean
+ fBodyBodyGyroJerkMagStd 
+
+Notes:
+
+- TotalAcc variables: The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'.  
+
+- BodyAcc variables- The body acceleration signal obtained by subtracting the gravity from the total acceleration. 
+
+- BodyGyro variables: The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. 
