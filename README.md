@@ -72,10 +72,6 @@ The run_analysis.R script does the following:
    * This is done using the dyplr commands group_by() and summarize_each()
    * This dataset is written to a text file called tidydata.txt
 
-Notes: 
-======
-- Features are normalized and bounded within [-1,1].
-- Each feature vector is a row on the text file.
 
 For more information about this dataset contact: activityrecognition@smartlab.ws
 
